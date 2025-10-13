@@ -34,7 +34,7 @@ $OSReleaseID = '25H2' #Used to Determine Driver Pack
 $OSName = 'Windows 11 25H2 x64'
 $OSEdition = 'Enterprise'
 $OSActivation = 'Volume'
-$OSLanguage = 'en-US'
+$OSLanguage = 'nl-NL'
 
 
 #Set OSDCloud Vars
