@@ -106,14 +106,10 @@ $ImageFileNameDL = Get-ChildItem -Path 'C:\OSDCloud\OS' -Name *.esd
 if (!(Test-Path $DriverPath)){New-Item -ItemType Directory -Path $DriverPath}
 
 if($ImageFileName -ne $ImageFileNameDL){
+    Remove-Item -Path $DriverPath$ImageFileName -Force
 if (!(Test-Path $DriverPath)){New-Item -ItemType Directory -Path $DriverPath}
 if (!(Test-Path $DriverPath$ImageFileNameDL)){Copy-Item -Path C:\OSDCloud\OS\$ImageFileNameDL -Destination $DriverPath$ImageFileNameDL -Force}
 }
-
-Remove-Item -Path 'C:\OSDCloud\Scripts' -Recurse -force
-Remove-Item -Path 'C:\OSDCloud\Packages' -Recurse -force
-Remove-Item -Path 'C:\OSDCloud\Temp' -Recurse -force
-Remove-Item -Path 'C:\OSDCloud\OS' -Recurse -force
 #===================
 
 if($GroupTag -eq 'leen-wk-1'){Dism /image:C:\ /Set-InputLocale:0413:00020409}
